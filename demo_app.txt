@@ -1,0 +1,13 @@
+
+class Tweet < ActiveRecord::Base
+  attr_accessible :status, :zombie1_id,:email
+  validates :status,
+  			 presence: true,
+  			 length: { minimum: 3}
+  validates :email,
+             presence: true,
+             format: { with: /\S+@{1}\S+\.\S{2,}$/}
+  validates :password,
+             presence: true,
+             format: { with: /\S+/}
+end
